@@ -27,4 +27,7 @@ public interface Benchmark<T> {
      * @return the average number of milliseconds taken for each run of function f.
      */
     double runFromSupplier(Supplier<T> supplier, int m);
+
 }
+
+
