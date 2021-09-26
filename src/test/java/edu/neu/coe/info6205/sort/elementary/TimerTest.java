@@ -18,7 +18,7 @@ public class TimerTest {
             for (int i = 0; i < randomNumbs.length; i++) {
                 randomNumbs[i] = rand.nextInt();
             }
-            Benchmark<Boolean> bm = new Benchmark_Timer<>(
+            Benchmark<Boolean> benchTest = new Benchmark_Timer<>(
                     "testForRandomOrderIntegers",
                     null,
                     b -> {
@@ -26,7 +26,7 @@ public class TimerTest {
                     },
                     null
             );
-            double result = bm.run(true, 100);
+            double result = benchTest.run(true, 100);
             System.out.println("Insertion for random array: " + result +" with length of array :"+length+"\n");
             length = length+length;
         }
@@ -39,7 +39,7 @@ public class TimerTest {
             for (int i = 0; i < orderedNumbs.length; i++) {
                 orderedNumbs[i]=i;
             }
-            Benchmark<Boolean> bm = new Benchmark_Timer<>(
+            Benchmark<Boolean> benchTest = new Benchmark_Timer<>(
                     "testForOrderedIntegers",
                     null,
                     b -> {
@@ -47,7 +47,7 @@ public class TimerTest {
                     },
                     null
             );
-            double result = bm.run(true, 100);
+            double result = benchTest.run(true, 100);
             System.out.println("Insertion for ordered array: " + result +" with length of array :"+length+"\n");
             length = length+length;
         }
@@ -62,7 +62,7 @@ public class TimerTest {
                 partiallyNumbs[i] = rand.nextInt();
             }
             new InsertionSort<Integer>().sort(partiallyNumbs,0,partiallyNumbs.length/2);
-            Benchmark<Boolean> bm = new Benchmark_Timer<>(
+            Benchmark<Boolean> benchTest = new Benchmark_Timer<>(
                     "testForPartiallyOrderIntegers",
                     null,
                     b -> {
@@ -70,7 +70,7 @@ public class TimerTest {
                     },
                     null
             );
-            double result = bm.run(true, 100);
+            double result = benchTest.run(true, 100);
             System.out.println("Insertion for partially ordered array: " + result +" with length of array :"+length+"\n");
             length = length+length;
         }
@@ -83,7 +83,7 @@ public class TimerTest {
             for (int i = 0; i < reversedNumbs.length; i++) {
                 reversedNumbs[i]= reversedNumbs.length-i-1;
             }
-            Benchmark<Boolean> bm = new Benchmark_Timer<>(
+            Benchmark<Boolean> benchTest = new Benchmark_Timer<>(
                     "testForReversedOrderedIntegers",
                     null,
                     b -> {
@@ -91,7 +91,7 @@ public class TimerTest {
                     },
                     null
             );
-            double result = bm.run(true, 100);
+            double result = benchTest.run(true, 100);
             System.out.println("Insertion for reversed ordered array: " + result +" with length of array :"+length+"\n");
             length = length+length;
         }
