@@ -9,7 +9,7 @@ public class TimerTest {
     public static Integer[] partiallyNumbs;
     public static Integer[] orderedNumbs;
     public static Integer[] reversedNumbs;
-    public int length = 25000;
+    public int length = 20000;
     @Test
     public void randomOrdered(){
         Random rand = new Random();
@@ -21,7 +21,7 @@ public class TimerTest {
             Benchmark<Boolean> benchTest = new Benchmark_Timer<>(
                     "testForRandomOrderIntegers",
                     null,
-                    b -> {
+                    func -> {
                         new InsertionSort<Integer>().sort(randomNumbs, 0, randomNumbs.length);
                     },
                     null
@@ -42,7 +42,7 @@ public class TimerTest {
             Benchmark<Boolean> benchTest = new Benchmark_Timer<>(
                     "testForOrderedIntegers",
                     null,
-                    b -> {
+                    func -> {
                         new InsertionSort<Integer>().sort(orderedNumbs, 0, orderedNumbs.length);
                     },
                     null
@@ -65,7 +65,7 @@ public class TimerTest {
             Benchmark<Boolean> benchTest = new Benchmark_Timer<>(
                     "testForPartiallyOrderIntegers",
                     null,
-                    b -> {
+                    func -> {
                         new InsertionSort<Integer>().sort(partiallyNumbs, 0, partiallyNumbs.length);
                     },
                     null
@@ -86,7 +86,7 @@ public class TimerTest {
             Benchmark<Boolean> benchTest = new Benchmark_Timer<>(
                     "testForReversedOrderedIntegers",
                     null,
-                    b -> {
+                    func -> {
                         new InsertionSort<Integer>().sort(reversedNumbs, 0, reversedNumbs.length);
                     },
                     null
