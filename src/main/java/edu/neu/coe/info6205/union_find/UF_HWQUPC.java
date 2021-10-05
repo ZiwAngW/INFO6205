@@ -191,9 +191,6 @@ public class UF_HWQUPC implements UF {
         // TO BE IMPLEMENTED update parent to value of grandparent
         parent[i]=parent[parent[i]];
     }
-    public static void main(String[] args){
-
-    }
 
 }
 
