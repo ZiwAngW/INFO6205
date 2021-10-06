@@ -8,21 +8,22 @@ public class UF_client {
     public static int count(int n){
         UF_HWQUPC u_F= new UF_HWQUPC(n);
         Random rand=new Random();
-        boolean [] checker= new boolean[n];
-        Arrays.fill(checker,false);
+//        boolean [] checker= new boolean[n];
+//        Arrays.fill(checker,false);
         int result=0;
-        while(true){
+        while(u_F.components()!=1){
             int p = rand.nextInt(n);
             int q = rand.nextInt(n);
+            result++;
             if(!u_F.connected(p,q)){
-                checker[p]=true;
-                checker[q]=true;
+//                checker[p]=true;
+//                checker[q]=true;
                 u_F.union(p,q);
-                result++;
             }
-            if(allMarked(checker)){
-                break;
-            }
+
+//            if(allMarked(checker)){
+//                break;
+//            }
         }
         return result;
     }
@@ -33,14 +34,18 @@ public class UF_client {
     }
 
     public static void main(String[] args){
-//        Scanner inPut=new Scanner(System.in);
-//        System.out.print("Enter an integer: ");
-//        int c = -1;
-//        c = inPut.nextInt();
+        Scanner inPut=new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int c = 0;
+        c = inPut.nextInt();
         int total=0;
-        for(int i=0;i<100;i++){
-            total = total+count(50);
+        for(int j=c;j<c*c;j+=j)
+        {
+            for(int i=0;i<100;i++){
+
+                total +=count(j);
+            }
+            System.out.println(j+" objects "+total/100.0+" pairs "+0.5*j*Math.log(j)+" perdiction");
         }
-        System.out.println("Average pairs over 1000 tries: "+total/100.0);
     }
 }
