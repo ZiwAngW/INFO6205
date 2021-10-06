@@ -8,22 +8,22 @@ public class UF_client {
     public static int count(int n){
         UF_HWQUPC u_F= new UF_HWQUPC(n);
         Random rand=new Random();
-//        boolean [] checker= new boolean[n];
-//        Arrays.fill(checker,false);
+        boolean [] checker= new boolean[n];
+        Arrays.fill(checker,false);
         int result=0;
-        while(u_F.components()!=1){
+        while(true){
             int p = rand.nextInt(n);
             int q = rand.nextInt(n);
             result++;
             if(!u_F.connected(p,q)){
-//                checker[p]=true;
-//                checker[q]=true;
+                checker[p]=true;
+                checker[q]=true;
                 u_F.union(p,q);
             }
 
-//            if(allMarked(checker)){
-//                break;
-//            }
+            if(allMarked(checker)){
+                break;
+            }
         }
         return result;
     }
@@ -45,7 +45,8 @@ public class UF_client {
 
                 total +=count(j);
             }
-            System.out.println(j+" objects "+total/100.0+" pairs "+0.5*j*Math.log(j)+" perdiction");
+            System.out.println(j+" objects, "+total/100.0+" pairs, "+0.5*j*Math.log(j)+" Prediction.");
+            total =0;
         }
     }
 }
