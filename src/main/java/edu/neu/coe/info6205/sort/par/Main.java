@@ -27,7 +27,7 @@ public class Main {
                 ParSort ps=new ParSort();
                 ps.thread=thread;
                 ps.setPool();
-                for (int j = 50; j < 100; j+=3) {
+                for (int j = 50; j < 100; j+=5) {
                     ParSort.cutoff = 10000 * (j + 1);
                     // for (int i = 0; i < array.length; i++) array[i] = random.nextInt(10000000);
                     long time;
